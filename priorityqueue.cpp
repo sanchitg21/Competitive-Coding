@@ -1,44 +1,87 @@
-//CODE BY Sanchit Gupta
-#define pb push_back
-#define db double
-#define lli long long int
-#define sa(v) sort(v.begin(),v.end())
-#define sd(v) sort(v.begin(),v.end(),greater<lli>())
-#define vpl vector<pair<lli,lli>>
-#define vll vector<lli>
-#define mps map<lli,lli>
-#define mpst map<string,lli>
-#define mpc map<char,lli>
-#define ff first
-#define ss second
-#include<iostream>
-#include<cmath>
 #include<bits/stdc++.h>
-#pragma GCC optimize("Ofast")
-#include<algorithm>
 using namespace std;
-#define gcd(a,b) __gcd(a,b)
-#define lcm(a,b) a*b/__gcd(a,b)
-#define endl '\n'
-const int mod=1e9+7;
-const int M=1e5+1;
-const int INF = 2e9;
+
+// struct person{
+//     int a;
+//     int b;
+//     person(int a,int b){
+//         this->a=a;
+//         this->b=b;
+//     }
+// };
+
+// struct cmp{
+//     bool operator()(person& p1,person &p2){
+//         if(p1.a == p2.a){
+//             return p1.b > p2.b;
+//         }
+//         return p1.a < p2.a;
+//     }
+// };
+
+// int main(){
+//     priority_queue<person,vector<person>,cmp>pq;
+//     int n;
+//     cin >> n;
+//     for(int i=0;i<n;i++){
+//         int a,b;
+//         cin >> a >> b;
+//         pq.push(person(a,b));
+//     }
+//     for(int i=0;i<n;i++){
+//         pair<int,int>c= {pq.top().a,pq.top().b};
+//         pq.pop();
+//         cout << c.first << " " << c.second << endl;
+//     }
+// }
+
+class cmp{
+    public:
+    int a;
+    int b;
+    cmp(int a,int b){
+        this->a =a;
+        this->b =b;
+    }
+};
+
+bool operator<(const cmp& c1,const cmp& c2){
+    if(c1.a == c2.a){
+        return c1.b > c2.b;
+    }
+    return c1.a < c2.a;
+};
 
 int main(){
-ios_base::sync_with_stdio(0);
-cin.tie(0);
-cout.tie(0);
-	lli n,m,t,i,j,k;
-	priority_queue<lli,vll,greater<lli>>q;
-    q.push(10);
-    q.push(30);
-    q.push(5);
-    q.push(20);
-    q.push(15);
-    q.push(69);
-    
-    while(!q.empty()){
-        cout << q.top() << " ";
-        q.pop();
+    priority_queue<cmp>pq;
+    for(int i=0;i<5;i++){
+        int a,b;
+        cin >> a >> b;
+        pq.push(cmp(a,b));
     }
+    
 }
+
+
+// struct cmp{
+//     bool operator()(pair<int,int>&a, pair<int,int>&b){
+//         if(a.first == b.first){
+//             return a.second > b.second;
+//         }
+//         return a.first < b.first;
+//     }
+// };
+
+// int main(){
+//     priority_queue<pair<int,int>,vector<pair<int,int>>,cmp>pq;
+//     int n,u,v;
+//     cin >> n;
+//     for(int i=0;i<n;i++){
+//         cin >> u >> v;
+//         pq.push({u,v});
+//     }
+//     for(int i=0;i<n;i++){
+//         cout << pq.top().first << " " << pq.top().second << endl;
+//         pq.pop();
+//     }
+// }
